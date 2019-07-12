@@ -35,18 +35,9 @@ header{
 .salutation{
 
     font-family: 'Luckiest Guy', cursive;
-    // font-size: 50px;
-    // text-transform: uppercase;
-    // background: rgb(184, 117, 180);
-    // display: table;
-    // margin: 20px auto;
-    // color: white;
-    // border-radius: 5px;
-    // mix-blend-mode: multiply;
-    // padding: 5px 10px;
     font-size: 50px;
     text-transform: uppercase;
-    text-shadow: -4px -4px 0px rgb(73, 89, 235);
+    text-shadow: -4px -4px 0px rgb(24, 34, 114);
     background: repeating-linear-gradient(45deg, rgb(57, 80, 70), rgb(82, 201, 201) 1px, white 2px, white 3px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -61,7 +52,7 @@ header{
         &-link{
             text-decoration: none;
             font-family: 'Luckiest Guy', cursive;
-            color: #000;
+            color: rgb(24, 34, 114);
             font-size: 20px;
             
         }
@@ -72,7 +63,7 @@ header{
         &-link{
             text-decoration: none;
             font-size: 50px;
-            color: #597da3;
+            color: rgb(24, 34, 114);
         }
     }  
 }
