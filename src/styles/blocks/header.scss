@@ -1,8 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
+@font-face {
+    font-family: 'Icons';
+    src: url('../../assets/icons/fontello-7ac6f4e4/font/fontello.woff2?37715948') format('woff2'),
+         url('../../assets/icons/fontello-7ac6f4e4/font/fontello.woff?37715948') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "Icons";
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+  }
+  .icon-robot:before { content: '\e800'; }
+  .icon-vk:before { content: '\e801'; }
+  .icon-smartphone:before { content: '\e802'; }
+
+  figure{
+      margin: 0;
+      display: inline-block;
+  }
+
 header{
     margin: auto;
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid #597da3;
     
 }
 .logo__img{
@@ -22,11 +46,33 @@ header{
     // padding: 5px 10px;
     font-size: 50px;
     text-transform: uppercase;
-    text-shadow: -4px -4px 0px rgb(128, 36, 36);
-    background: repeating-linear-gradient(45deg, rgb(57, 80, 70), rgb(0, 0, 0) 1px, white 2px, white 3px);
+    text-shadow: -4px -4px 0px rgb(73, 89, 235);
+    background: repeating-linear-gradient(45deg, rgb(57, 80, 70), rgb(82, 201, 201) 1px, white 2px, white 3px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: table;
     margin: 20px auto;
-  
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__phone{
+        &-link{
+            text-decoration: none;
+            font-family: 'Luckiest Guy', cursive;
+            color: #000;
+            font-size: 20px;
+            
+        }
+    }
+    &__vk_profile{
+        display: flex;
+        justify-content: center;
+        &-link{
+            text-decoration: none;
+            font-size: 50px;
+            color: #597da3;
+        }
+    }  
 }
