@@ -49,7 +49,7 @@ function buildPages() {
   }
 
   function buildStyles() {
-    return src('src/styles/*.scss')
+    return src('src/styles/**/*.scss')
       .pipe(sass())
       .pipe(postcss([
         autoprefixer(),
@@ -71,7 +71,7 @@ function buildAssets() {
 
 function watchFiles() {
     watch(['src/pages/*.twig', 'src/pages/**/*.html'], buildPages);
-    watch('src/styles/*.scss', buildStyles);
+    watch('src/styles/**/*.scss', buildStyles);
     watch('src/scripts/**/*.js', buildScripts);
     watch('src/assets/**/*.*', buildAssets);
   }
