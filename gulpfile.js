@@ -3,6 +3,10 @@ var browserSync = require('browser-sync');
 var del = require('del');
 var twig = require('gulp-twig');
 var imagemin = require('gulp-imagemin');
+var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
 
 // Девсервер
 function devServer(cb) {
@@ -16,7 +20,6 @@ function devServer(cb) {
   browserSync.create().init(params);
   cb();
 }
-
 
   
   function buildAssets(cb) {
@@ -45,10 +48,15 @@ function buildPages() {
       .pipe(dest('build/'));
   }
 
-function buildStyles() {
-  return src('src/styles/*.css')
-    .pipe(dest('build/styles/'));
-}
+  function buildStyles() {
+    return src('src/styles/*.scss')
+      .pipe(sass())
+      .pipe(postcss([
+        autoprefixer(),
+        cssnano()
+      ]))
+      .pipe(dest('build/styles/'));
+  }
 
 function buildScripts() {
   return src('src/scripts/**/*.js')
@@ -62,8 +70,8 @@ function buildAssets() {
 
 
 function watchFiles() {
-    watch(['src/pages/*.twig', 'src/pages/*.html'], buildPages);
-    watch('src/styles/*.css', buildStyles);
+    watch(['src/pages/*.twig', 'src/pages/**/*.html'], buildPages);
+    watch('src/styles/*.scss', buildStyles);
     watch('src/scripts/**/*.js', buildScripts);
     watch('src/assets/**/*.*', buildAssets);
   }
