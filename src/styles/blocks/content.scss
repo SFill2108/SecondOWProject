@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 .content { 
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(auto-fit, 1frpx);
     grid-gap: 2vw;
     color: white;
+    font-family: 'Roboto Slab', serif;
 }
 .intro{
     display: grid;
@@ -19,13 +20,11 @@
         }
     }
     &__headling{
-        font-size: 60px;
-        font-family: 'Caveat', cursive;
+        font-size: 45px;
         margin-left: 100px;
     }
     &__skill{
-        font-family: 'Caveat', cursive;
-        font-size: 25px;
+        font-size: 22px;
     }
 }
 .about{
@@ -33,6 +32,10 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+    @media all and (max-width: 575px) {
+        grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    }
     &__photo{
         display: grid;
         justify-content: center;
@@ -44,9 +47,8 @@
         display: grid;
         justify-content: center;
         &_text{
-            font-family: 'Caveat', cursive;
             width: 300px;
-            font-size: 21px;
+            font-size: 18px;
         }
     }
     &__media{

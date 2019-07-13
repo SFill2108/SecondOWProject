@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 @font-face {
     font-family: 'Icons';
     src: url('../../assets/icons/fontello-7ac6f4e4/font/fontello.woff2?37715948') format('woff2'),
@@ -34,42 +33,3 @@ header{
     height: 110px;
 }
 
-h1{     font-family: 'Lobster', cursive;
-        font-size: 45px;
-        overflow: hidden;
-        text-shadow: 0 0 rgb(255, 255, 255),
-                        0 0 yellowgreen,
-                        0 0 skyblue;
-        color: transparent;
-        transition: all 1s;
-        }
-        h1:hover {
-            text-shadow: -400px 0 tomato,
-                        400px 0 yellowgreen,
-                        0 0 #f1d42a;
-            }
-
-
-.contacts{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    &__phone{
-        &-link{
-            text-decoration: none;
-            font-family: 'Luckiest Guy', cursive;
-            color: rgb(255, 255, 255);
-            font-size: 20px;
-            
-        }
-    }
-    &__vk_profile{
-        display: flex;
-        justify-content: center;
-        &-link{
-            text-decoration: none;
-            font-size: 50px;
-            color: rgb(255, 255, 255);
-        }
-    }  
-}

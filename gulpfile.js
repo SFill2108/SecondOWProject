@@ -28,7 +28,7 @@ function devServer(cb) {
     src('src/assets/**/*.*')
       .pipe(dest('build/assets/'));
   
-    src('src/assets/img/**/*.*')
+      src(['src/assets/**/*.*', '!src/assets/img/**/*.*'])
       .pipe(imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],
@@ -36,6 +36,7 @@ function devServer(cb) {
         interlaced: true
       }))
       .pipe(dest('build/assets/img'));
+      cb();
   }
   
 function clearBuild() {
