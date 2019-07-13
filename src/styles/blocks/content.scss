@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+.content { 
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 2vw;
+}
+.intro{
+    display: grid;
+    grid-template-rows: 200px 75px 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 0vw;
+    &__img{
+        display: grid;
+        justify-content: start;
+        &_parametrs{
+            height: 200px;
+        }
+    }
+    &__headling{
+        font-size: 60px;
+        font-family: 'Caveat', cursive;
+        margin-left: 100px;
+    }
+    &__skill{
+        font-family: 'Caveat', cursive;
+        font-size: 25px;
+    }
+}
+
+
+
+
+
+//     grid-template-areas:
+//     "img img img"
+
+// }
+// .intro__img{
+//     grid-area: img;
+// }
+// .intro__headlign{
+//     grid-area: headlign;
+// }
+// .intro__skill{
+//     grid-area: skill;
+// }
