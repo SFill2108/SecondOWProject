@@ -16,7 +16,7 @@ function devServer(cb) {
     watch: true,
     reloadDebounce: 150,
     notify: false,
-    server: { baseDir: './build' },
+    server: { baseDir: './www' },
   };
 
   browserSync.create().init(params);
@@ -26,7 +26,7 @@ function devServer(cb) {
   
   function buildAssets(cb) {
     src('src/assets/**/*.*')
-      .pipe(dest('build/assets/'));
+      .pipe(dest('www/assets/'));
   
       src(['src/assets/**/*.*', '!src/assets/img/**/*.*'])
       .pipe(imagemin({
@@ -35,12 +35,12 @@ function devServer(cb) {
         use: [imageminPngquant()],
         interlaced: true
       }))
-      .pipe(dest('build/assets/img'));
+      .pipe(dest('www/assets/img'));
       cb();
   }
   
 function clearBuild() {
-  return del('build/');
+  return del('www/');
 }
 
 // Сборка
@@ -49,7 +49,7 @@ function buildPages() {
     return src(['src/pages/*.twig', 'src/pages/*.html'])
     .pipe(twig())
     .pipe(typograf({ locale: ['ru', 'en-US'] }))
-    .pipe(dest('build/'));
+    .pipe(dest('www/'));
   }
 
   function buildStyles() {
@@ -62,12 +62,12 @@ function buildPages() {
         autoprefixer(),
         cssnano()
       ]))
-      .pipe(dest('build/styles/'));
+      .pipe(dest('www/styles/'));
   }
 
 function buildScripts() {
   return src('src/scripts/**/*.js')
-    .pipe(dest('build/scripts/'));
+    .pipe(dest('www/scripts/'));
 }
 
 
