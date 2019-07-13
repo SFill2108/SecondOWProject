@@ -19,9 +19,11 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-twig": "^1.2.0",
-    "imagemin-pngquant": "^8.0.0"
+    "imagemin-pngquant": "^8.0.0",
+    "normalize-scss": "^7.0.1"
   },
   "devDependencies": {
-    "gulp-typograf": "^4.0.0"
+    "gulp-typograf": "^4.0.0",
+    "node-normalize-scss": "^8.0.0"
   }
 }

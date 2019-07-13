@@ -54,7 +54,10 @@ function buildPages() {
 
   function buildStyles() {
     return src('src/styles/**/*.scss')
-      .pipe(sass())
+        
+      .pipe(sass({
+        includePaths: require('node-normalize-scss').includePaths
+      }))
       .pipe(postcss([
         autoprefixer(),
         cssnano()

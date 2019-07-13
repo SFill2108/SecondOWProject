@@ -1,4 +1,13 @@
+@import "normalize";
 @import 'blocks/body.scss';
 @import 'blocks/header.scss';
 @import 'blocks/content.scss';
 @import 'blocks/footer.scss';
+.bc{
+    background-color: #2D2D2D;
+}
+.container{
+    max-width: 1440px;
+    margin: auto;
+
+}

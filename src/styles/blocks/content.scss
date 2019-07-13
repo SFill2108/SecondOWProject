@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 .content { 
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(auto-fit, 1frpx);
-    grid-gap: 2vw;
+    display: flex;
+    flex-direction: column;
+    max-width: 95%;
+    margin: auto;
     color: white;
     font-family: 'Roboto Slab', serif;
 }
 .intro{
     display: grid;
-    grid-template-rows: 200x 75px 1fr;
     grid-template-columns: 1fr;
-    grid-gap: 0vw;
+    grid-template-rows: 1fr 1fr 1fr ;
+    @media (max-width: 800px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr ;
+        }
     &__img{
         display: grid;
         justify-content: start;
@@ -30,17 +34,17 @@
 .about{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 33% 33% 33%;
     align-items: center;
-    @media all and (max-width: 575px) {
+    @media all and (max-width: 800px) {
         grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
     &__photo{
         display: grid;
         justify-content: center;
         &_img{
-            height: 300px;
+            width: 100%;
         }
     }
     &__me{
@@ -93,4 +97,9 @@
           }
         }
       }
+}
+.about__media_list{
+    font-size: 23px;
+    text-align: center;
+    
 }
