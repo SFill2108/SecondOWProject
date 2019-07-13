@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
+var typograf = require('gulp-typograf');
 
 // Девсервер
 function devServer(cb) {
@@ -23,17 +24,12 @@ function devServer(cb) {
 
   
   function buildAssets(cb) {
-    // Уберём пока картинки из общего потока
-    src(['src/assets/**/*.*', '!src/assets/img/**/*.*'])
+    src('src/assets/**/*.*')
       .pipe(dest('build/assets/'));
   
     src('src/assets/img/**/*.*')
       .pipe(imagemin())
       .pipe(dest('build/assets/img'));
-  
-    // Раньше функция что-то вовзращала, теперь добавляем вместо этого искусственый колбэк
-    // Это нужно, чтобы Галп понимал, когда функция отработала и мог запустить следующие задачи
-    cb();
   }
   
 function clearBuild() {
@@ -44,8 +40,9 @@ function clearBuild() {
 function buildPages() {
     // Пути можно передавать массивами
     return src(['src/pages/*.twig', 'src/pages/*.html'])
-      .pipe(twig())
-      .pipe(dest('build/'));
+    .pipe(twig())
+    .pipe(typograf({ locale: ['ru', 'en-US'] }))
+    .pipe(dest('build/'));
   }
 
   function buildStyles() {

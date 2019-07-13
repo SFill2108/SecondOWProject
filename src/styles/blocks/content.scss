@@ -2,12 +2,12 @@
 .content { 
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, 1frpx);
     grid-gap: 2vw;
 }
 .intro{
     display: grid;
-    grid-template-rows: 200px 75px 1fr;
+    grid-template-rows: 200x 75px 1fr;
     grid-template-columns: 1fr;
     grid-gap: 0vw;
     &__img{
@@ -26,6 +26,44 @@
         font-family: 'Caveat', cursive;
         font-size: 25px;
     }
+}
+.about{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    &__photo{
+        display: grid;
+        justify-content: center;
+        &_img{
+            height: 300px;
+        }
+    }
+    &__me{
+        display: grid;
+        justify-content: center;
+        &_text{
+            font-family: 'Caveat', cursive;
+            width: 300px;
+            font-size: 21px;
+        }
+    }
+    &__media{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    a { color:#20afb4;
+        text-decoration:none;
+        transition: 0.2s;
+        margin: 10px;
+        border: #20afb4 solid 2px;
+        background-color: #d8e244;
+        border-radius: 5px;
+    }
+    a:hover {color: #990000;}
+    a:active {color:#000;}
 }
 
 

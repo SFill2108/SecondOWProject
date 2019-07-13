@@ -19,5 +19,8 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-twig": "^1.2.0"
+  },
+  "devDependencies": {
+    "gulp-typograf": "^4.0.0"
   }
 }
