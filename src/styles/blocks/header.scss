@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 @font-face {
     font-family: 'Icons';
     src: url('../../assets/icons/fontello-7ac6f4e4/font/fontello.woff2?37715948') format('woff2'),
@@ -26,24 +27,29 @@ header{
     margin: auto;
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid #597da3;
+    border-bottom: 2px solid rgb(255, 255, 255), ;
     
 }
 .logo__img{
     height: 110px;
 }
-.salutation{
 
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 50px;
-    text-transform: uppercase;
-    text-shadow: -4px -4px 0px rgb(24, 34, 114);
-    background: repeating-linear-gradient(45deg, rgb(57, 80, 70), rgb(82, 201, 201) 1px, white 2px, white 3px);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: table;
-    margin: 20px auto;
-}
+h1{     font-family: 'Lobster', cursive;
+        font-size: 45px;
+        overflow: hidden;
+        text-shadow: 0 0 rgb(255, 255, 255),
+                        0 0 yellowgreen,
+                        0 0 skyblue;
+        color: transparent;
+        transition: all 1s;
+        }
+        h1:hover {
+            text-shadow: -400px 0 tomato,
+                        400px 0 yellowgreen,
+                        0 0 #f1d42a;
+            }
+
+
 .contacts{
     display: flex;
     flex-direction: column;
@@ -52,7 +58,7 @@ header{
         &-link{
             text-decoration: none;
             font-family: 'Luckiest Guy', cursive;
-            color: rgb(24, 34, 114);
+            color: rgb(255, 255, 255);
             font-size: 20px;
             
         }
@@ -63,7 +69,7 @@ header{
         &-link{
             text-decoration: none;
             font-size: 50px;
-            color: rgb(24, 34, 114);
+            color: rgb(255, 255, 255);
         }
     }  
 }

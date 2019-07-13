@@ -3,6 +3,7 @@ var browserSync = require('browser-sync');
 var del = require('del');
 var twig = require('gulp-twig');
 var imagemin = require('gulp-imagemin');
+var imageminPngquant = require('imagemin-pngquant');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -28,7 +29,12 @@ function devServer(cb) {
       .pipe(dest('build/assets/'));
   
     src('src/assets/img/**/*.*')
-      .pipe(imagemin())
+      .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [imageminPngquant()],
+        interlaced: true
+      }))
       .pipe(dest('build/assets/img'));
   }
   
@@ -60,10 +66,6 @@ function buildScripts() {
     .pipe(dest('build/scripts/'));
 }
 
-function buildAssets() {
-  return src('src/assets/**/*.*')
-    .pipe(dest('build/assets/'));
-}
 
 
 function watchFiles() {
