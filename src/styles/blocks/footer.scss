@@ -4,7 +4,10 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px solid rgb(255, 255, 255);    
+    border-top: 2px solid white; 
+    @media (max-width: 800px) {
+    width: 95%;
+    }
 }
 .contacts{
     display: flex;
@@ -13,7 +16,7 @@ footer{
     &__phone{
         &-link{
             text-decoration: none;
-            color: rgb(255, 255, 255);
+            color: white;
             font-size: 20px;
             
         }
@@ -33,4 +36,7 @@ footer{
     &_img{
         height: 110px;
     }
+}
+.icon-smartphone{
+    font-size: 30px;
 }

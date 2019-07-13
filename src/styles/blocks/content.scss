@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+$color_gray: #2D2D2D;
+$color_sunny: #f1d42a;
 .content { 
     display: flex;
     flex-direction: column;
@@ -81,14 +83,14 @@
           bottom: 0;
           right: 1.25rem;
           left: 1.25rem;
-          background-color: #f1d42a;
+          background-color:$color_sunny;
           transition: all .3s cubic-bezier(.2, 0, 0, 1);
           transform-origin: bottom center;
           z-index: -1;
         }
         
         &:hover {
-          color: #2D2D2D;
+          color: $color_gray;
           
           &:after {
             right: 0;
